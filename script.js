@@ -4,7 +4,7 @@
 const playersData = {
     jungle: { nick: "Flyence_Jungle", role: "Markvin", color: "#a855f7", mains: "Хирара, Су Ё, Нолан, Ли Сун Син", rank: "Мифический Бессмертный 109", bio: "Агрессив бой" },
     mid: { nick: "Flyence_Mid", role: "Moon", color: "#00f2fe", mains: "Заск, Валир, Новария", rank: "Мифический Бессмертный 110", bio: "Хочет научиться на селене(((" },
-    exp: { nick: "Flyence_EXP", role: "Mal1nbi4", color: "#ff6b00", mains: "Арлотт, Чонг", rank: "Мифическая Слава 85", bio: "Хз пока" },
+    exp: { nick: "Flyence_EXP", role: "Mal1nbi4", color: "#ff6b00", mains: "Арлотт, Чонг", rank: "Мифическая Слава 85", bio: "Летит фидить 1 в 5" },
     gold: { nick: "Flyence_Gold", role: "Ma_bachana", color: "#ffd700", mains: "Клинт", rank: "Мифический Бессмертный 149", bio: "Экспонат" },
     roam: { nick: "Flyence_Roam", role: "Yes It`s Pomegranate", color: "#10b981", mains: "Атлас, Белерик", rank: "Мифический Бессмертный 110", bio: "Лютый мейнер Чухана" },
     reserve: { nick: "Flyence_Reserve_Exp", role: "Arlequin_Rumold", color: "rgb(4, 0, 249)", mains: "Фрейя", rank: "Мифический Бессмертный 132", bio: "Тунеядец ученик (Маскот)"}
@@ -88,21 +88,21 @@ function prevHighlight() {
 const memesList = [
     {
         type: "video",
-        mediaUrl: "images/meme_bachana1.mp4",
+        videoUrl: "https://files.catbox.moe/vxqcoy.mp4",
         text: "«Бачана экспонат»",
         author: "Yes It`s Pomegranate"
     },
     {
         type: "video",
-        mediaUrl: "images/meme_bachana2.mp4",
+        videoUrl: "https://files.catbox.moe/jy7pvj.mp4",
         text: "Клинта возьми!",
         author: "Yes It`s Pomegranate"
     },
     {
         type: "video",
-        mediaUrl: "images/meme_video1.mp4",
+        videoUrl: "images/meme_video1.mp4", // Заменили mediaUrl на videoUrl
         text: "В будущем",
-        author: "В будущемt"
+        author: "В будущем"
     }
 ];
 
@@ -114,9 +114,9 @@ function renderMeme() {
     let html = '';
     
     if (meme.type === 'image') {
-        html += `<img src="${meme.mediaUrl}" class="media-element" alt="Мем">`;
+        html += `<img src="${meme.videoUrl}" class="media-element" alt="Мем">`;
     } else if (meme.type === 'video') {
-        html += `<video src="${meme.mediaUrl}" controls class="media-element"></video>`;
+        html += `<video src="${meme.videoUrl}" controls class="media-element"></video>`;
     }
 
     html += `<p class="meme-text">${meme.text}</p>`;
