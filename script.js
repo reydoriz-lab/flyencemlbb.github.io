@@ -87,15 +87,16 @@ function prevHighlight() {
 // ===============================================================
 const memesList = [
     {
-        type: "text",
-        text: "«В будущем»",
-        author: "В будущем"
+        type: "video",
+        mediaUrl: "images/meme_bachana1.mp4",
+        text: "«Бачана экспонат»",
+        author: "Yes It`s Pomegranate"
     },
     {
-        type: "image",
-        mediaUrl: "images/meme1.png",
-        text: "В будущем",
-        author: "В будущем"
+        type: "video",
+        mediaUrl: "images/meme_bachana2.mp4",
+        text: "Клинта возьми!",
+        author: "Yes It`s Pomegranate"
     },
     {
         type: "video",
