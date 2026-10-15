@@ -1,0 +1,279 @@
+:root {
+    --bg-color: #0b0e14;
+    --card-bg: rgba(21, 26, 35, 0.85);
+    --accent-color: #00f2fe;
+    --accent-glow: rgba(0, 242, 254, 0.45);
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-radius: 14px;
+    --player-theme-color: #00f2fe;
+}
+
+/* ЗАДНИЙ ФОН С БОЛЕЕ КОНТРАСТНОЙ СЕТКОЙ И НЕОНОМ */
+body {
+    background-color: #06080d;
+    background-image: 
+        /* Неоновые размытые пятна на фоне */
+        radial-gradient(circle at 15% 20%, rgba(0, 242, 254, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 68%, rgba(168, 85, 247, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(0, 242, 254, 0.15) 0%, transparent 50%),
+        /* Сетка: сделали линии чуть ярче и четче (rgba 0.07 вместо 0.02) */
+        linear-gradient(rgba(0, 242, 254, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 35px 35px, 35px 35px;
+    background-attachment: fixed;
+    color: var(--text-color);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: radial-gradient(circle at top, rgba(0, 242, 254, 0.25) 0%, transparent 70%);
+}
+
+.logo-container img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover { transform: scale(1.05); }
+
+.team-name {
+    font-size: 3.2rem;
+    margin: 15px 0 5px;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.tagline {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 28px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
+                0 0 20px rgba(0, 242, 254, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 
+                0 0 30px rgba(0, 242, 254, 0.3);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card h2 i {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+/* Кнопки ролей */
+.role-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0 20px;
+}
+
+.role-btn {
+    background: #1c2333;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.role-btn:hover {
+    background: #252e42;
+    border-color: var(--accent-color);
+}
+
+.role-btn.active {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.player-card {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 5px solid var(--player-theme-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    box-shadow: -5px 0 15px -3px var(--player-theme-color);
+    opacity: 1;
+    transform: scale(1);
+}
+
+.player-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.player-role {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--player-theme-color);
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border: 1px solid var(--player-theme-color);
+}
+
+/* Кнопка Telegram */
+.tg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #0088cc;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tg-btn:hover {
+    background: #0099e6;
+    transform: translateY(-2px);
+}
+
+/* ОБЩИЙ СТАЙЛИНГ СЛАЙДЕРОВ */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-btn {
+    background: rgba(0, 242, 254, 0.15);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.slider-btn:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.slider-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Фиксированная высота и плавный переход для смены слайдов */
+.highlight-card, .meme-card {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    text-align: center;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Класс для мягкого исчезновения */
+.fade-out {
+    opacity: 0 !important;
+    transform: scale(0.97) !important;
+}
+
+.media-element {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 8px;
+    background: #000;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    margin: 8px 0 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.meme-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+}
+
+.meme-author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}

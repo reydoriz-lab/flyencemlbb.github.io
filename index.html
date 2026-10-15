@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyence | MLBB Esports Team</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1. ШАПКА -->
+    <header class="hero">
+        <div class="logo-container">
+            <img src="images/logo.jpg" alt="Flyence Logo" id="team-logo" onerror="this.src='https://via.placeholder.com/150/00f2fe/ffffff?text=FLYENCE'">
+        </div>
+        <h1 class="team-name">FLYENCE</h1>
+        <p class="tagline">Mobile Legends: Bang Bang Esports Team</p>
+    </header>
+
+    <main class="container">
+
+        <!-- 2. О НАС -->
+        <section class="card" id="about">
+            <h2><i class="fa-solid fa-shield-halved"></i> О нашей команде</h2>
+            <p><strong>Flyence</strong> — киберспортивный состав по Mobile Legends: Bang Bang. Наша цель — Развитие команды, хорошее макро и микро.</p>
+        </section>
+
+        <!-- 3. ИНТЕРАКТИВНЫЙ РОСТЕР -->
+        <section class="card" id="roster">
+            <h2><i class="fa-solid fa-gamepad"></i> Состав команды</h2>
+            <div class="role-buttons">
+                <button class="role-btn active" onclick="showPlayer('jungle')">Jungle</button>
+                <button class="role-btn" onclick="showPlayer('mid')">Mid</button>
+                <button class="role-btn" onclick="showPlayer('exp')">EXP Lane</button>
+                <button class="role-btn" onclick="showPlayer('gold')">Gold Lane</button>
+                <button class="role-btn" onclick="showPlayer('roam')">Roam</button>
+                <button class="role-btn" onclick="showPlayer('reserve')">Reserve</button>
+            </div>
+
+            <div class="player-card" id="player-info" style="--player-theme-color: #a855f7;">
+                <h3 id="player-nick">Flyence_Jungle</h3>
+                <span class="player-role" id="player-role-badge">Jungle (Лес)</span>
+                <div class="player-details">
+                    <p><strong>Мейн-герои:</strong> <span id="player-mains">Хирара, Нолан, Су Ё, Ли Сун Син</span></p>
+                    <p><strong>Ранг:</strong> <span id="player-rank">Мифический Бессмертный</span></p>
+                    <p><strong>Инфо:</strong> <span id="player-bio">Агрессивный</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. СВЯЗЬ С ГЛАВОЙ -->
+        <section class="card" id="contact">
+            <h2><i class="fa-solid fa-crown"></i> Контакты</h2>
+            <a href="https://t.me/Mvrkvin" target="_blank" class="tg-btn">
+                <i class="fa-brands fa-telegram"></i> Написать главе в Telegram
+            </a>
+        </section>
+
+        <!-- 5. ХАЙЛАЙТЫ СО СТРЕЛОЧКАМИ -->
+        <section class="card" id="highlights">
+            <h2><i class="fa-solid fa-fire"></i> Хайлайты</h2>
+            <p class="section-desc">Лучшие моменты с праков и турниров:</p>
+            
+            <div class="slider-container">
+                <button class="slider-btn" onclick="prevHighlight()"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-window">
+                    <div class="highlight-card" id="current-highlight">
+                        <!-- Сюда JS подставляет видео хайлайтов -->
+                    </div>
+                </div>
+
+                <button class="slider-btn" onclick="nextHighlight()"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- 6. ВНУТРЕННИЕ МЕМЫ СО СТРЕЛОЧКАМИ -->
+        <section class="card" id="memes">
+            <h2><i class="fa-solid fa-face-laugh-squint"></i> Мемы команды</h2>
+            <p class="section-desc">Локальные мемы состава:</p>
+            
+            <div class="slider-container">
+                <button class="slider-btn" onclick="prevMeme()"><i class="fa-solid fa-chevron-left"></i></button>
+                
+                <div class="slider-window">
+                    <div class="meme-card" id="current-meme">
+                        <!-- Сюда JS подставляет мемы -->
+                    </div>
+                </div>
+
+                <button class="slider-btn" onclick="nextMeme()"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Flyence MLBB Team.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
